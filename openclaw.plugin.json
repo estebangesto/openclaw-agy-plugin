@@ -1,0 +1,25 @@
+{
+  "id": "extension-agy",
+  "name": "Agy isolated runner",
+  "description": "Runs asynchronous public-research jobs through agy in a dedicated Bubblewrap sandbox.",
+  "version": "0.4.0",
+  "contracts": { "tools": ["extension_agy_submit", "extension_agy_status"] },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "stateDir": { "type": "string", "minLength": 1 },
+      "jobsRoot": { "type": "string", "minLength": 1 },
+      "profileDir": { "type": "string", "minLength": 1 },
+      "agyPath": { "type": "string", "minLength": 1 },
+      "bubblewrapPath": { "type": "string", "minLength": 1 },
+      "openclawPath": { "type": "string", "minLength": 1 },
+      "defaultModel": { "type": "string", "minLength": 1 },
+      "modelCatalogTtlSeconds": { "type": "integer", "minimum": 0, "maximum": 86400 },
+      "catalogRefreshTimeoutMs": { "type": "integer", "minimum": 1000, "maximum": 60000 },
+      "jobTimeoutSeconds": { "type": "integer", "minimum": 30, "maximum": 900 },
+      "tavilyApiKey": { "type": "string", "minLength": 1 },
+      "newsdataApiKey": { "type": "string", "minLength": 1 }
+    }
+  }
+}
